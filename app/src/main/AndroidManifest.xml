@@ -3,6 +3,7 @@
     package="edu.miu.cs473de.cv_builder">
 
     <application
+        android:name=".common.CvBuilderApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,18 +11,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CVBuilder">
         <activity
-            android:name=".ui.SplashActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:name=".ui.HomeActivity"
+            android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false">
+            android:name=".ui.launchpad.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.launchpad.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/RegisterActivityStyle"/>
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
