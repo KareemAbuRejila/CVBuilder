@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
 //            }
 //        }
         CoroutineScope(Dispatchers.IO).launch {
-            login("e","2")
+//            login("e","2")
 
         }
     }
@@ -70,28 +70,10 @@ class LoginActivity : AppCompatActivity() {
         startForResult.launch(Intent(this, RegisterActivity::class.java))
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == RegisterActivity.REGISTER_REQUEST_CODE && data != null &&
-//            resultCode == Activity.RESULT_OK
-//        ) {
-//        intent.getStringExtra("email")?.let { Log.i("email",it) }
-//        intent.getStringExtra("pass")?.let { Log.i("pass",it) }
-////            if (email != null && pass != null)
-////                runBlocking {
-////                    withContext(Dispatchers.IO) {
-////                        login(email, pass)
-////                    }
-////                }
-//        }
-//    }
-
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
             val intent = result.data
-            // Handle the Intent
-            //do stuff here
             val email=intent?.getStringExtra("email")
             val pass=intent?.getStringExtra("pass")
             if (email != null && pass != null)

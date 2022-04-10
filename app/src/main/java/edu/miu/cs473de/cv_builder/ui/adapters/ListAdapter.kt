@@ -18,7 +18,6 @@ class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var type = 0
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return when (type) {

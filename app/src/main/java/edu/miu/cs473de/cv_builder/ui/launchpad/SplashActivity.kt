@@ -1,10 +1,9 @@
-package edu.miu.cs473de.cv_builder.ui
+package edu.miu.cs473de.cv_builder.ui.launchpad
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import edu.miu.cs473de.cv_builder.R
-import edu.miu.cs473de.cv_builder.ui.launchpad.LoginActivity
 import java.lang.Thread.sleep
 
 class SplashActivity : AppCompatActivity() {
@@ -13,7 +12,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Thread{
-            sleep(1000)
+            sleep(3000)
             goToLoginActivity()
         }.start()
     }

@@ -21,6 +21,8 @@ import edu.miu.cs473de.cv_builder.models.Experience
 import edu.miu.cs473de.cv_builder.models.User
 import edu.miu.cs473de.cv_builder.ui.adapters.ViewPagerAdapter
 import kotlinx.coroutines.*
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var user: User
@@ -150,6 +152,9 @@ class HomeActivity : AppCompatActivity() {
         user.linkedIn="https://www.linkedin.com/in/muntinvoa"
         user.github="https://github.com/muntinvoa"
         user.pdf="PDF"
+        MSharedPreference?.let {
+            it.edit()?.putString("userData",Json.encodeToString(user))
+        }
         return user
     }
 

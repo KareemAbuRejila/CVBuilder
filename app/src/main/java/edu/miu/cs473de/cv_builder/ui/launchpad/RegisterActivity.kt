@@ -18,11 +18,11 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        runBlocking {
-            withContext(Dispatchers.IO) {
-                createAccount(fName = "fName", lName = "lName", email = "e", password = "2")
-            }
-        }
+//        runBlocking {
+//            withContext(Dispatchers.IO) {
+//                createAccount(fName = "fName", lName = "lName", email = "e", password = "2")
+//            }
+//        }
     }
 
     fun registerAccount(view: View) {
@@ -35,7 +35,6 @@ class RegisterActivity : AppCompatActivity() {
                 createAccount(fName = fName, lName = lName, email = email, password = pass)
             }
         }
-
     }
 
     private suspend fun createAccount(
